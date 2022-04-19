@@ -10,4 +10,5 @@ pixel = pyautogui.pixel(23, 13)
 print(pixel)
 
 # print(pyautogui.pixelMatchesColor(23, 13, (64,170,242)))
-print(pyautogui.pixelMatchesColor(23, 13, pixel))
+# print(pyautogui.pixelMatchesColor(23, 13, pixel))
+print(pyautogui.pixelMatchesColor(23, 13, (64,170,243)))
