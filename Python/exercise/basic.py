@@ -19,15 +19,16 @@ ws[f"B{num}"] = "cv2.IMREAD_(이미지 색상 설정)"
 ws[f"C{num}"] = "COLOR"
 ws[f"C{num+1}"] = "GRAYSCALE"
 ws[f"C{num+2}"] = "UNCHANGED"
-last_cell = num+2
+last_cell = ws.max_row
 thickborder.border(ws, f"A{num}:C{last_cell}")
 ws.merge_cells(f"A{num}:A{last_cell}")
 ws.merge_cells(f"B{num}:B{last_cell}")
 
 num = ws.max_row +1
-ws[f"B{num}"] = "cv2.COLOR_(회색으로 이미지 변경)"
+ws[f"B{num}"] = "cv2.COLOR_(cvtColor)"
 ws[f"C{num}"] = "BGR2GRAY"
-last_cell = num
+ws[f"C{num+1}"] = "BGR2RGB"
+last_cell = ws.max_row
 thickborder.border(ws, f"A{num}:C{last_cell}")
 ws.merge_cells(f"A{num}:A{last_cell}")
 ws.merge_cells(f"B{num}:B{last_cell}")
@@ -37,7 +38,7 @@ ws[f"B{num}"] = "cv2.LINE_(선 그릴때 선 스타일)"
 ws[f"C{num}"] = 4
 ws[f"C{num+1}"] = 8
 ws[f"C{num+2}"] = "AA"
-last_cell = num+2
+last_cell = ws.max_row
 thickborder.border(ws, f"A{num}:C{last_cell}")
 ws.merge_cells(f"A{num}:A{last_cell}")
 ws.merge_cells(f"B{num}:B{last_cell}")
@@ -49,7 +50,7 @@ ws[f"C{num+1}"] = "HERSHEY_PLAIN"
 ws[f"C{num+2}"] = "HERSHEY_SCRIPT_SIMPLEX"
 ws[f"C{num+3}"] = "HERSHEY_TRIPLEX"
 ws[f"C{num+4}"] = "ITALC"
-last_cell = num+4
+last_cell = ws.max_row
 thickborder.border(ws, f"A{num}:C{last_cell}")
 ws.merge_cells(f"A{num}:A{last_cell}")
 ws.merge_cells(f"B{num}:B{last_cell}")
@@ -59,7 +60,7 @@ ws[f"B{num}"] = "cv2.INTER_(보간법)"
 ws[f"C{num}"] = "AREA"
 ws[f"C{num+1}"] = "CUBIC"
 ws[f"C{num+2}"] = "LINEAR"
-last_cell = num+2
+last_cell = ws.max_row
 thickborder.border(ws, f"A{num}:C{last_cell}")
 ws.merge_cells(f"A{num}:A{last_cell}")
 ws.merge_cells(f"B{num}:B{last_cell}")
@@ -69,7 +70,7 @@ ws[f"B{num}"] = "cv2.ROTATE_(회전)"
 ws[f"C{num}"] = "90_CLOCKWISE"
 ws[f"C{num+1}"] = 180
 ws[f"C{num+2}"] = "90_COUNTERCLOCKWISE"
-last_cell = num+2
+last_cell = ws.max_row
 thickborder.border(ws, f"A{num}:C{last_cell}")
 ws.merge_cells(f"A{num}:A{last_cell}")
 ws.merge_cells(f"B{num}:B{last_cell}")
@@ -80,7 +81,7 @@ ws[f"C{num}"] = "LBUTTONDOWN"
 ws[f"C{num+1}"] = "LBUTTONDBLCLK"
 ws[f"C{num+2}"] = "MOUSEWHEEL"
 ws[f"C{num+3}"] = "MOUSEMOVE"
-last_cell = num+3
+last_cell = ws.max_row
 thickborder.border(ws, f"A{num}:C{last_cell}")
 ws.merge_cells(f"A{num}:A{last_cell}")
 ws.merge_cells(f"B{num}:B{last_cell}")
@@ -91,7 +92,7 @@ ws[f"C{num}"] = "BINARY"
 ws[f"C{num+1}"] = "BINARY_INV"
 ws[f"C{num+2}"] = "OTSU"
 ws[f"C{num+3}"] = "ADAPTIVE_....MEAN"
-last_cell = num+3
+last_cell = ws.max_row
 thickborder.border(ws, f"A{num}:C{last_cell}")
 ws.merge_cells(f"A{num}:A{last_cell}")
 ws.merge_cells(f"B{num}:B{last_cell}")
@@ -101,7 +102,17 @@ ws[f"B{num}"] = "cv2.RECT_(사각형으로 인식)"
 ws[f"C{num}"] = "EXTERNAL"
 ws[f"C{num+1}"] = "LIST"
 ws[f"C{num+2}"] = "TREE"
-last_cell = num+2
+last_cell = ws.max_row
+thickborder.border(ws, f"A{num}:C{last_cell}")
+ws.merge_cells(f"A{num}:A{last_cell}")
+ws.merge_cells(f"B{num}:B{last_cell}")
+
+num = ws.max_row +1
+ws[f"B{num}"] = "cv2.CAP_PROP_(영상 저장하기)"
+ws[f"C{num}"] = "FRAME_WIDTH"
+ws[f"C{num+1}"] = "FRAME_HEIGHT"
+ws[f"C{num+2}"] = "FPS"
+last_cell = ws.max_row
 thickborder.border(ws, f"A{num}:C{last_cell}")
 ws.merge_cells(f"A{num}:A{last_cell}")
 ws.merge_cells(f"B{num}:B{last_cell}")
