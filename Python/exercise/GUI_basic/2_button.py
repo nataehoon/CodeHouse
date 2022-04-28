@@ -1,7 +1,5 @@
 from tkinter import *
 
-from pygame import image
-
 root = Tk()
 root.title("myGUI")
 
@@ -20,7 +18,7 @@ btn4.pack()
 btn5 = Button(root, fg="red", bg="yellow", text="버튼5")
 btn5.pack()
 
-photo = PhotoImage(file="GUI_basic/image.png")
+photo = PhotoImage(file="./exercise/GUI_basic/image.png")
 btn6 = Button(root, image=photo)
 btn6.pack()
 
